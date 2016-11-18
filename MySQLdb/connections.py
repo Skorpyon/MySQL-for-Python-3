@@ -149,6 +149,9 @@ class Connection(_mysql.connection):
 
         kwargs2 = kwargs.copy()
 
+        # Dirty hack for RestBtg
+        kwargs2.pop('use_unicode', None)
+
         if 'conv' in kwargs:
             conv = kwargs['conv']
         else:
