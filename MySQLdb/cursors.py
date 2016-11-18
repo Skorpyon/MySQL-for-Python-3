@@ -184,8 +184,9 @@ class BaseCursor(object):
             else:
                 query = query.format( db.literal(args) )
 
-        if isinstance(query, str):
-            query = query.encode(charset);
+        # Scorpio dirty hack for RestBTG
+        # if isinstance(query, str):
+        #     query = query.encode(charset);
 
         try:
             r = None
